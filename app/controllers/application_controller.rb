@@ -25,7 +25,7 @@ class ApplicationController < Sinatra::Base
     user = User.find_by(username: params[:username])
 		if user && user.authenticate(params[:password])
 			session[:user_id] = user.id
-			redirect "/profile"
+			redirect "/profile/#{user.id}"
 		  else
 			redirect "/failure"
 		  end
@@ -46,7 +46,9 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-  get '/profile' do
+  get '/profile/:id' do
+    @user = User.find_by(id: params [:id])
+    @outfits = @user.outfits
     erb :profile
   end
 
