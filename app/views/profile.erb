@@ -2,4 +2,26 @@
 
 <p>All of your outfit boards will be here.</p>
 
-<p><a href="/logout">Log Out</a></p>
+<body>
+<% if Helpers.is_logged_in?(session) %>
+
+<h1>Welcome <%= Helpers.current_user(session).username %></h1>
+
+<h3>Your Closet: </h3>
+<ul>
+  <% @items.each do |item| %>
+    <li><%=item.name%></a></li>
+  <%end%>
+
+</ul>
+
+<% else %>
+
+<h1>You Must <a href="/">Log In</a> to View Your Closet!</h1>
+
+<% end %>
+
+<a href="/logout">Log Out</a>
+
+</body>
+
