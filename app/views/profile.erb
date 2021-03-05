@@ -8,12 +8,7 @@
 <h1>Welcome <%= @user.username %></h1>
 
 <h3>Your Closet: </h3>
-<ul>
-  <% @items.each do |item| %>
-    <li><%=item.name%></a></li>
-  <%end%>
 
-</ul>
 
 
 <a href="/logout">Log Out</a>
