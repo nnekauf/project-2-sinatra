@@ -1,6 +1,6 @@
 class OutfitsController < ApplicationController
     get '/outfits' do
-
+        
     end
 
     get '/outfits/new' do
