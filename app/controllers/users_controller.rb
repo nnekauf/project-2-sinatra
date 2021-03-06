@@ -33,7 +33,7 @@ class UsersController < ApplicationController
         end
     end
 
-    get 'users/:id' do
+    get '/users/:id' do
         # "if they have outfits, see all outfit names here with their link"
         @user = User.find_by(id: params[:id])
          @outfits = @user.outfits

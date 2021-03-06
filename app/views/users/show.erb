@@ -9,8 +9,12 @@
 
 <h3>Your Closet: </h3>
 
-
-
+<ul>
+<% @outfits.each do |o| %>
+    <li><a href="/outfits/<%=o.id%>"><%=o.name%></a></li>
+<%end%>
+</ul>
+<h3> <a href="/outfits/new>">Create a new Outfit!</a></h3>
 <a href="/logout">Log Out</a>
 
 </body>

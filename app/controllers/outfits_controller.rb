@@ -4,11 +4,11 @@ class OutfitsController < ApplicationController
     end
 
     get 'outfits/new' do
-
+        erb :'/outfits/new'
     end
 
     get 'outfits/:id' do
-
+        erb :'outfits/show'
     end
 
     get 'outfits/:id/edit' do
