@@ -5,7 +5,9 @@ class UsersController < Sinatra::Base
     get "users/login" do
         erb :login
     end
-
+    get "/login" do
+        erb :'/users/login'
+      end
     post 'login' do
         user = User.find_by(username: params[:username])
         if user && user.authenticate(params[:password])
@@ -16,9 +18,10 @@ class UsersController < Sinatra::Base
         end
     end
     
-    # get '/signup' do
-    #     erb :signup
-    # end
+    get "/signup" do
+  
+        erb :signup
+    end
 
     post '/signup' do
         if params[:username] == "" || params[:password] == ""
@@ -31,6 +34,7 @@ class UsersController < Sinatra::Base
     end
 
     get '/profile/:id' do
+        "hello!"
         @user = User.find_by(id: params[:id])
         # @outfits = @user.outfits
         erb :profile
