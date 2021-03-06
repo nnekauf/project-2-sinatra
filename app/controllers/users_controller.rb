@@ -1,6 +1,6 @@
-require './config/environment'
 
-class UsersController < Sinatra::Base
+
+class UsersController < ApplicationController
 
     get "/users/login" do
         erb :'users/login'
