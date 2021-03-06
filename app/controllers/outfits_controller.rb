@@ -3,10 +3,14 @@ class OutfitsController < ApplicationController
 
     end
 
-    get 'outfits/new' do
+    get '/outfits/new' do
         erb :'/outfits/new'
     end
 
+    post '/outfits' do
+
+    end
+    
     get 'outfits/:id' do
         erb :'outfits/show'
     end
