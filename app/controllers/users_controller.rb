@@ -16,9 +16,9 @@ class UsersController < Sinatra::Base
         end
     end
     
-    get '/signup' do
-        erb :signup
-    end
+    # get '/signup' do
+    #     erb :signup
+    # end
 
     post '/signup' do
         if params[:username] == "" || params[:password] == ""
