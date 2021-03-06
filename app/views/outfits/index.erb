@@ -1,0 +1,7 @@
+<h1> Here are all of your outfits!<h1>
+
+<ul>
+<% @outfits.each do |o| %>
+    <li><a href="/outfits/<%=o.id%>"><%= o.name %> </a></li>
+    <% end %>
+</ul>

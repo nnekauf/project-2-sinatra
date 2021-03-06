@@ -1,6 +1,7 @@
 class OutfitsController < ApplicationController
     get '/outfits' do
-        
+        @outfits = Outfit.all
+        erb :'/outfits/index'
     end
 
     get '/outfits/new' do
