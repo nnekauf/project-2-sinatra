@@ -19,10 +19,6 @@ class ApplicationController < Sinatra::Base
     erb :failure
   end
 
-  
-
- 
-
  
 
   helpers do
