@@ -1,5 +1,5 @@
 class OutfitsController < ApplicationController
-    get 'outfits' do
+    get '/outfits' do
 
     end
 
@@ -9,18 +9,19 @@ class OutfitsController < ApplicationController
 
     post '/outfits' do
         outfit = Outfit.create(params[:outfit])
-        redirect "outfits/#{outfit.id}"
+        redirect "/outfits/#{outfit.id}"
     end
 
-    get 'outfits/:id' do
+    get '/outfits/:id' do
+        @outfit = Outfit.find_by(id: params[:id])
         erb :'outfits/show'
     end
 
-    get 'outfits/:id/edit' do
+    get '/outfits/:id/edit' do
 
     end
 
-    delete 'outfits/:id' do
+    delete '/outfits/:id' do
 
     end
 end
