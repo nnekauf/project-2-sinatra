@@ -21,7 +21,9 @@ class OutfitsController < ApplicationController
 
     end
 
-    delete '/outfits/:id' do
 
+    delete '/outfits/:id' do
+        @outfit.delete
+        redirect "/outfits"
     end
 end

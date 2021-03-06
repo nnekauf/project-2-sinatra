@@ -3,3 +3,11 @@
 <%=@outfit.bottom%><br>
 <%=@outfit.shoes%> 
 <%=@outfit.accessories%></p>
+
+<a href="/outfit/:id/edit">Edit this Outfit</a>
+
+
+<form action="/outfits/<%=@outfit.id%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete">
+  </form>
