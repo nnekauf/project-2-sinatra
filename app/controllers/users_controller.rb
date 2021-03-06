@@ -2,13 +2,13 @@ require './config/environment'
 
 class UsersController < Sinatra::Base
 
-    get "users/login" do
-        erb :login
+    get "/users/login" do
+        erb :'users/login'
     end
-    get "/login" do
-        erb :'/users/login'
-      end
-    post 'login' do
+
+  
+
+    post '/login' do
         user = User.find_by(username: params[:username])
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id
@@ -20,7 +20,7 @@ class UsersController < Sinatra::Base
     
     get "/signup" do
   
-        erb :signup
+        erb :"/users/signup"
     end
 
     post '/signup' do
@@ -33,14 +33,14 @@ class UsersController < Sinatra::Base
         end
     end
 
-    get '/profile/:id' do
+    get 'users/profile/:id' do
         "hello!"
         @user = User.find_by(id: params[:id])
         # @outfits = @user.outfits
         erb :profile
     end
 
-    get '/logout' do
+    get 'users/logout' do
         session.clear 
         redirect "/"
     end
