@@ -8,9 +8,10 @@ class OutfitsController < ApplicationController
     end
 
     post '/outfits' do
-
+        outfit = Outfit.create(params[:outfit])
+        redirect "outfits/#{outfit.id}"
     end
-    
+
     get 'outfits/:id' do
         erb :'outfits/show'
     end
