@@ -4,7 +4,7 @@
 <%=@outfit.shoes%> 
 <%=@outfit.accessories%></p>
 
-<a href="/outfits/:id/edit">Edit this Outfit</a><br>
+<a href="/outfits/<%=@outfit.id%>/edit">Edit this Outfit</a><br>
 <a href="/outfits">See all Outfits</a>
 
 <form action="/outfits/<%=@outfit.id%>" method="post">

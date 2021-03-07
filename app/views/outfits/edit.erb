@@ -1,0 +1,14 @@
+<form action="/outfits/<%=@outfit.id %>" method="post">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <label>Outfit Name: </label>
+  <input type="text" name="outfit[name]" value="<%=@outfit.name%>">
+  <label>Outfit Top: </label>
+  <input type="text" name="outfit[top]"  value="<%=@outfit.top%>">
+  <label>Outfit Bottom: </label>
+  <input type="text" name="outfit[bottom]"  value="<%=@outfit.bottom%>">
+  <label>Outfit Shoes: </label>
+  <input type="text" name="outfit[shoes]"  value="<%=@outfit.shoes%>">
+  <label>Outfit Accessories: </label>
+  <input type="text" name="outfit[accessories]"  value="<%=@outfit.accessories%>">
+  <input type="submit" value="submit">
+</form> 
