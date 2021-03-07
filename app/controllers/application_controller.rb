@@ -9,6 +9,8 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "secret"
   end
 
+  register Sinatra::Flash
+
    get "/" do
      erb :index
    end
@@ -40,5 +42,7 @@ class ApplicationController < Sinatra::Base
     def redirect_if_not_owner(obj)
       redirect "/outfits" unless check_owner(obj)
     end
+    #could add helper method to check for the current outfit
+    #could add helper method to set item
   end
 end

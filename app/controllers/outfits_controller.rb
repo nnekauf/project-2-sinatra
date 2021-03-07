@@ -30,7 +30,7 @@ class OutfitsController < ApplicationController
         redirect_if_not_logged_in
         @outfit = Outfit.find_by(id: params[:id])
          
-        if !@outfit || check_owner(@outfit)#if there is no outfit or it doesnt belong to user. go back to all outfits
+        if !@outfit || !check_owner(@outfit)#if there is no outfit or it doesnt belong to user. go back to all outfits
             redirect '/outfits'
         end
         erb :"/outfits/edit"
