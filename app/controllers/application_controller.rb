@@ -12,9 +12,7 @@ class ApplicationController < Sinatra::Base
    get "/" do
      erb :index
    end
-  # get '/profile/' do
-  #   "Hello World"
-  # end
+
   
   
   
@@ -25,18 +23,22 @@ class ApplicationController < Sinatra::Base
 
  
 
-  # helpers do
-  #   def logged_in?
-  #     !!session[:user_id]
-  #   end
+  helpers do
+    def logged_in?
+      !!session[:user_id]
+    end
 
-  #   def current_user
-  #     @user = User.find_by(id: session[:user_id])
-  #   end
+    def current_user
+      @user = User.find_by(id: session[:user_id])
+    end
 
-  #   def redirect_if_not_logged_in
-  #       redirect '/login' unless current_user
-  #   end
+    def redirect_if_not_logged_in
+        redirect '/login' unless current_user
+    end
 
-  # end
+    def check_owner(obj)
+
+    end
+
+  end
 end

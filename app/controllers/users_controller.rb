@@ -35,8 +35,10 @@ class UsersController < ApplicationController
     end
 
     get '/users' do 
+        
         @users = User.all
         erb :'/users/index'
+
     end
 
     get '/users/:id' do
@@ -46,7 +48,7 @@ class UsersController < ApplicationController
          erb :'/users/show'
     end
 
-    get 'users/logout' do
+    get '/logout' do
         session.clear 
         redirect "/"
     end

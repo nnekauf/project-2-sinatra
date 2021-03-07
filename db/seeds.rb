@@ -1,0 +1,13 @@
+User.create(username: "1", password: "1234")
+User.create(username: "2", password: "1234")
+User.create(username: "3", password: "1234")
+User.create(username: "4", password: "1234")
+
+Outfit.create(name: "outfit 1one", top: "top", bottom: "bottom", shoes: "shoes", accessories: "accessories", user_id: 1)
+Outfit.create(name: "outfit 2one", top: "top", bottom: "bottom", shoes: "shoes", accessories: "accessories", user_id: 1)
+Outfit.create(name: "outfit 3one", top: "top", bottom: "bottom", shoes: "shoes", accessories: "accessories", user_id: 2)
+Outfit.create(name: "outfit 4one", top: "top", bottom: "bottom", shoes: "shoes", accessories: "accessories", user_id: 2)
+Outfit.create(name: "outfit 5one", top: "top", bottom: "bottom", shoes: "shoes", accessories: "accessories", user_id: 3)
+Outfit.create(name: "outfit 6one", top: "top", bottom: "bottom", shoes: "shoes", accessories: "accessories", user_id: 3)
+Outfit.create(name: "outfit 7one", top: "top", bottom: "bottom", shoes: "shoes", accessories: "accessories", user_id: 4)
+Outfit.create(name: "outfit 8one", top: "top", bottom: "bottom", shoes: "shoes", accessories: "accessories", user_id: 4)
