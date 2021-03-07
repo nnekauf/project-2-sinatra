@@ -10,6 +10,9 @@ class OutfitsController < ApplicationController
 
     post '/outfits' do
         outfit = Outfit.create(params[:outfit])
+        user = User.find_by(id: session[:user_id])
+        user.items << outfit
+
         redirect "/outfits/#{outfit.id}"
     end
 
