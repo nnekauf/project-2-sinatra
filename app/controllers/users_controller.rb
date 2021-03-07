@@ -25,17 +25,16 @@ class UsersController < ApplicationController
     end
 
     post '/signup' do
-        if params[:user][:username] == "" || params[:user][:password] == ""
-            redirect to "/failure"
-         else
-            user = User.create(params[:user])
+        user = User.create(params[:user])
+        if user.id #if an id of the user exists that means it is unique
             session[:user_id] = user.id
             redirect to "/users/#{user.id}"
+        else
+            erb :'users/signup'
         end
     end
 
-    get '/users' do
-
+    get '/users' do 
         @users = User.all
         erb :'/users/index'
     end
