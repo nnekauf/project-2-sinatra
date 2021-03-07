@@ -35,14 +35,14 @@ class UsersController < ApplicationController
     end
 
     get '/users' do 
-        
+        redirect_if_not_logged_in
         @users = User.all
         erb :'/users/index'
 
     end
 
     get '/users/:id' do
-        # "if they have outfits, see all outfit names here with their link"
+        redirect_if_not_logged_in
         @user = User.find_by(id: params[:id])
          @outfits = @user.outfits
          erb :'/users/show'

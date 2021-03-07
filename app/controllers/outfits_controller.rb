@@ -1,10 +1,12 @@
 class OutfitsController < ApplicationController
     get '/outfits' do
+        redirect_if_not_logged_in
         @outfits = Outfit.all
         erb :'/outfits/index'
     end
 
     get '/outfits/new' do
+        redirect_if_not_logged_in
         erb :'/outfits/new'
     end
 
@@ -16,6 +18,7 @@ class OutfitsController < ApplicationController
     end
 
     get '/outfits/:id' do
+        redirect_if_not_logged_in
         @outfit = Outfit.find_by(id: params[:id])
         if !@outfit #if there is no outfit. go back to all outfits
             redirect '/outfits'
@@ -24,6 +27,7 @@ class OutfitsController < ApplicationController
     end
 
     get '/outfits/:id/edit' do
+        redirect_if_not_logged_in
         @outfit = Outfit.find_by(id: params[:id])
          
         if !@outfit || @outfit.user_id != session[:user_id]#if there is no outfit or it doesnt belong to user. go back to all outfits
