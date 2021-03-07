@@ -24,7 +24,7 @@ class OutfitsController < ApplicationController
     end
 
     get '/outfits/:id/edit' do
-        @outfit = Outfit.find_by_id(params[:id])
+        @outfit = Outfit.find_by(id: params[:id])
         if !@outfit #if there is no outfit. go back to all outfits
             redirect '/outfits'
         end
@@ -32,13 +32,18 @@ class OutfitsController < ApplicationController
     end
 
     patch '/outfits/:id' do 
-        @outfit = Outfit.find_by_id(params[:id])
+        @outfit = Outfit.find_by(id: params[:id])
         @outfit.update(params[:outfit])
         redirect to "/outfits/#{@outfit.id}"
       end
 
     delete '/outfits/:id' do
-        @outfit.delete
-        redirect "/outfits"
+        @outfit = Outfit.find_by(id: params[:id])
+        if @outfit.user_id == session[:user_id]
+            @outfit.delete 
+            redirect "/outfits"
+        else
+            erb :'/outfits/show'
+        end
     end
 end
