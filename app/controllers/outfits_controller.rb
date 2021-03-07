@@ -33,8 +33,11 @@ class OutfitsController < ApplicationController
 
     patch '/outfits/:id' do 
         @outfit = Outfit.find_by(id: params[:id])
-        @outfit.update(params[:outfit])
-        redirect to "/outfits/#{@outfit.id}"
+        if @outfit.user_id == session[:user_id]
+            @outfit.update(params[:outfit])
+        end
+        erb :'/outfits/show'
+        # redirect to "/outfits/#{@outfit.id}"
       end
 
     delete '/outfits/:id' do
