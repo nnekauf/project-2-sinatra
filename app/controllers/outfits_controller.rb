@@ -30,7 +30,7 @@ class OutfitsController < ApplicationController
         redirect_if_not_logged_in
         @outfit = Outfit.find_by(id: params[:id])
          
-        if !@outfit || @outfit.user_id != session[:user_id]#if there is no outfit or it doesnt belong to user. go back to all outfits
+        if !@outfit || check_owner(@outfit)#if there is no outfit or it doesnt belong to user. go back to all outfits
             redirect '/outfits'
         end
         erb :"/outfits/edit"
@@ -38,7 +38,7 @@ class OutfitsController < ApplicationController
 
     patch '/outfits/:id' do 
         @outfit = Outfit.find_by(id: params[:id])
-        if @outfit.user_id == session[:user_id]
+        if check_owner(@outfit)
             @outfit.update(params[:outfit])
         end
         erb :'/outfits/show'
@@ -47,7 +47,7 @@ class OutfitsController < ApplicationController
 
     delete '/outfits/:id' do
         @outfit = Outfit.find_by(id: params[:id])
-        if @outfit.user_id == session[:user_id]
+        if check_owner(@outfit)
             @outfit.delete 
             redirect "/outfits"
         else
