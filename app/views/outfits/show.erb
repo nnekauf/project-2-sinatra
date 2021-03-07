@@ -4,10 +4,13 @@
 <%=@outfit.shoes%> 
 <%=@outfit.accessories%></p>
 
-<a href="/outfits/<%=@outfit.id%>/edit">Edit this Outfit</a><br>
-<a href="/outfits">See all Outfits</a>
+<% if check_owner(@outfit) %>
+  <a href="/outfits/<%=@outfit.id%>/edit">Edit this Outfit</a><br>
+  <a href="/outfits">See all Outfits</a>
 
-<form action="/outfits/<%=@outfit.id%>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete">
+  <form action="/outfits/<%=@outfit.id%>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Delete">
   </form>
+
+  <%end%>
