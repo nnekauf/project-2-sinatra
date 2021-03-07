@@ -37,5 +37,8 @@ class ApplicationController < Sinatra::Base
       obj.user == current_user
     end
 
+    def redirect_if_not_owner(obj)
+      redirect "/outfits" unless check_owner(obj)
+    end
   end
 end
