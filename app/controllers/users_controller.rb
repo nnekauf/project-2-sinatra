@@ -34,6 +34,12 @@ class UsersController < ApplicationController
         end
     end
 
+    get '/users' do
+
+        @users = User.all
+        erb :'/users/index'
+    end
+
     get '/users/:id' do
         # "if they have outfits, see all outfit names here with their link"
         @user = User.find_by(id: params[:id])
