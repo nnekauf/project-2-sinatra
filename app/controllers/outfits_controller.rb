@@ -9,21 +9,25 @@ class OutfitsController < ApplicationController
     end
 
     post '/outfits' do
-        outfit = Outfit.create(params[:outfit])
         user = User.find_by(id: session[:user_id])
-        user.items << outfit
+        outfit = user.items.create(params[:outfit])
 
         redirect "/outfits/#{outfit.id}"
     end
 
     get '/outfits/:id' do
         @outfit = Outfit.find_by(id: params[:id])
+        if !@outfit #if there is no outfit. go back to all outfits
+            redirect '/outfits'
+        end
         erb :'/outfits/show'
     end
 
     get '/outfits/:id/edit' do
         @outfit = Outfit.find_by_id(params[:id])
-    
+        if !@outfit #if there is no outfit. go back to all outfits
+            redirect '/outfits'
+        end
         erb :"/outfits/edit"
     end
 
