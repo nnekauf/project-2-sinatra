@@ -25,7 +25,8 @@ class OutfitsController < ApplicationController
 
     get '/outfits/:id/edit' do
         @outfit = Outfit.find_by(id: params[:id])
-        if !@outfit #if there is no outfit. go back to all outfits
+         
+        if !@outfit || @outfit.user_id != session[:user_id]#if there is no outfit or it doesnt belong to user. go back to all outfits
             redirect '/outfits'
         end
         erb :"/outfits/edit"
