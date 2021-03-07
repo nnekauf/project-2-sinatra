@@ -1,7 +1,7 @@
 <h2> MyCloset Community! <h2>
 
 <ul>
-    <%@users.each do |u|%>
-    <li> <%=u.username%> </li>
-    <%end%>
+<% @users.each do |user| %>
+    <li><a href="/users/<%=user.id%>"><%=user.username%></a></li>
+  <%end%>
 </ul>
