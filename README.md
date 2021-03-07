@@ -24,6 +24,7 @@ To MyCloset run
     $shotgun
 
 In your terminal, you should see something like this:
+
     $== Shotgun/Thin on http://127.0.0.1:9393/
     $2021-03-07 01:47:58 -0500 Thin web server (v1.8.0 codename Possessed Pickle)
     $2021-03-07 01:47:58 -0500 Maximum connections set to 1024
@@ -32,6 +33,7 @@ In your terminal, you should see something like this:
 The numbers may vary depending on the current time, date, port number, and local machine.
 
 In your browser, navigate to 
+
     $localhost:9393
 
 You have now entered into MyCloset, enjoy!
