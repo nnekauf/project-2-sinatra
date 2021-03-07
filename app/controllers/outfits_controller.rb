@@ -13,8 +13,14 @@ class OutfitsController < ApplicationController
     post '/outfits' do
         # user = User.find_by(id: session[:user_id])
         # outfit = user.items.create(params[:outfit])
-        outfit = current_user.items.create(params[:outfit])
-        redirect "/outfits/#{outfit.id}"
+        outfit = current_user.outfits.create(params[:outfit])
+        if outfit.valid?
+            redirect "/outfits/#{outfit.id}"
+        else
+            flash[:message] = outfit.errors.full_messages
+            redirect '/outfits/new'
+        end
+        
     end
 
     get '/outfits/:id' do
