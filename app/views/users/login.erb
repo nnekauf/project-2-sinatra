@@ -1,4 +1,9 @@
 <h3>Login</h3>
+
+<% @errors && @errors.each do |m| %>
+  <li> <%=m%> </li>
+<%end%>
+
 <form action="/login" method="POST">
   <input type="text" name="user[username]" placeholder="username">
   <input type="text" name="user[password]" placeholder="password">
