@@ -19,7 +19,7 @@ In order to have access to the gems needed to run this application, execute:
 Now that you have forked and cloned the repository onto your local machine
 and executed $bundle install in your terminal, it is time to start.
 
-To MyCloset run
+To begin MyCloset run
 
     $shotgun
 
@@ -34,7 +34,7 @@ The numbers may vary depending on the current time, date, port number, and local
 
 In your browser, navigate to 
 
-    $localhost:9393
+    localhost:9393
 
 You have now entered into MyCloset, enjoy!
 
