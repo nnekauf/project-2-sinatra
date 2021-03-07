@@ -40,7 +40,10 @@ class ApplicationController < Sinatra::Base
     end
 
     def redirect_if_not_owner(obj)
-      redirect "/outfits" unless check_owner(obj)
+      if !check_owner(obj)
+        flash[:message] = "Sorry, this is not your item!"
+        redirect "/outfits"
+      end
     end
     #could add helper method to check for the current outfit
     #could add helper method to set item
