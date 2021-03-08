@@ -1,20 +1,18 @@
 
 
-<p>All of your outfit boards will be here.</p>
-
 <body>
 
 
-<h1>Welcome <%= current_user.username %></h1>
+<h1>Welcome <%= current_user.username%>!</h1>
 
 <h3>Your Closet: </h3>
 
 <ul>
 <% @outfits.each do |o| %>
-    <li><a href="/outfits/<%=o.id%>"><%=o.name%></a></li>
+    <li><a href="/outfits/<%=o.id%>"><%=o.name%></a></li><br>
 <%end%>
 </ul>
-<a href="/outfits/new">Create a new Outfit!</a>
+<a href="/outfits/new">Create a New Outfit!</a>
 
 
 </body>

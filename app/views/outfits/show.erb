@@ -1,12 +1,12 @@
-<h1> <%= @outfit.name%> </h1>
-<p><%=@outfit.top%> 
-<%=@outfit.bottom%><br>
-<%=@outfit.shoes%> 
+<h1> <%= @outfit.name%> </h1><br>
+<p><%=@outfit.top%> <br><br>
+<%=@outfit.bottom%><br><br>
+<%=@outfit.shoes%> <br><br>
 <%=@outfit.accessories%></p>
 
 <% if check_owner(@outfit) %>
-  <a href="/outfits/<%=@outfit.id%>/edit">Edit this Outfit</a><br>
-  <a href="/outfits">See all Outfits</a>
+  <a href="/outfits/<%=@outfit.id%>/edit">Edit this Outfit</a><br><br>
+  <a href="/outfits">See all Outfits</a><br><br>
 
   <form action="/outfits/<%=@outfit.id%>" method="post">
       <input type="hidden" name="_method" value="delete">

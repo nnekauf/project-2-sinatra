@@ -1,18 +1,22 @@
 <% flash[:message] && flash[:message].each do |m| %>
   <li> <%=m%> </li>
 <%end%>
-<h1> create a form here to add a new outfit </h1>
+<h1> Create a new Outfit below! </h1>
+
+<br>
+<br>
+<br>
 
 <form action="/outfits" method="post">
   <label>Outfit Name: </label>
-  <input type="text" name="outfit[name]">
+  <input type="text" name="outfit[name]"><br><br>
   <label>Top: </label>
-  <input type="text" name="outfit[top]">
+  <input type="text" name="outfit[top]"><br><br>
   <label>Bottoms: </label>
-  <input type="text" name="outfit[bottom]">
+  <input type="text" name="outfit[bottom]"><br><br>
   <label>Shoes: </label>
-  <input type="text" name="outfit[shoes]">
+  <input type="text" name="outfit[shoes]"><br><br>
   <label>Accessories: </label>
-  <input type="text" name="outfit[accessories]">
+  <input type="text" name="outfit[accessories]"><br><br>
   <input type="submit">
 </form>

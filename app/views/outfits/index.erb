@@ -1,8 +1,8 @@
 <%=flash[:message]%>
-<h1> Here are all of your outfits!<h1>
+<h1> Check out what others have in their Closets!<h1><br>
 
-<ul>
+<h4><ul>
 <% @outfits.each do |o| %>
-    <li><a href="/outfits/<%=o.id%>"><%= o.name %> </a></li>
+    <li><a href="/outfits/<%=o.id%>"><%= o.name %> </a></li><br>
     <% end %>
-</ul>
+</ul></h4>
