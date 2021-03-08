@@ -5,7 +5,8 @@ Specs:
 - [ ] Use ActiveRecord for storing information in a database
 - [x] Include more than one model class (e.g. User, Post, Category)
     - Includes Outfit and User models
-- [ ] Include at least one has_many relationship on your User model (e.g. User has_many Posts)
+- [x] Include at least one has_many relationship on your User model (e.g. User has_many Posts)
+    - Users have many Outfits
 - [ ] Include at least one belongs_to relationship on another model (e.g. Post belongs_to User)
 - [ ] Include user accounts with unique login attribute (username or email)
 - [ ] Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying
@@ -19,3 +20,5 @@ Confirm
 - [ ] Your commit messages are meaningful
 - [ ] You made the changes in a commit that relate to the commit message
 - [ ] You don't include changes in a commit that aren't related to the commit message
+
+
