@@ -7,7 +7,8 @@ Specs:
     - Includes Outfit and User models
 - [x] Include at least one has_many relationship on your User model (e.g. User has_many Posts)
     - Users have many Outfits
-- [ ] Include at least one belongs_to relationship on another model (e.g. Post belongs_to User)
+- [x] Include at least one belongs_to relationship on another model (e.g. Post belongs_to User)
+    - Outfits belong to a User
 - [ ] Include user accounts with unique login attribute (username or email)
 - [ ] Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying
 - [ ] Ensure that users can't modify content created by other users
