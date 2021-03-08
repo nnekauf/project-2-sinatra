@@ -19,9 +19,13 @@ Specs:
     - README.md is available and meets requirements
 
 Confirm
-- [ ] You have a large number of small Git commits
-- [ ] Your commit messages are meaningful
-- [ ] You made the changes in a commit that relate to the commit message
-- [ ] You don't include changes in a commit that aren't related to the commit message
+- [x] You have a large number of small Git commits
+    - Commits have been made with each defining task
+- [x] Your commit messages are meaningful
+    - Commit messages explain what was changed 
+- [x] You made the changes in a commit that relate to the commit message
+    - Commit messages reflect to what was done
+- [x] You don't include changes in a commit that aren't related to the commit message
+    - All commits describe what was done
 
 
