@@ -26,6 +26,7 @@ class OutfitsController < ApplicationController
     get '/outfits/:id' do
         redirect_if_not_logged_in
         @outfit = Outfit.find_by(id: params[:id])
+        @outfit_owner = User.find_by(id: @outfit.user_id)
         if !@outfit #if there is no outfit. go back to all outfits
             redirect '/outfits'
         end
