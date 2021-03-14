@@ -5,8 +5,10 @@
 
     <div class="content">
       <p>Welcome to MyCloset! <br>
-      <a href="/login">Log In</a>
-      <a href="/signup">Sign Up</a></p>
+      <% if !current_user%> 
+        <a href="/login">Log In</a>
+        <a href="/signup">Sign Up</a></p>
+      <%end%>
     </div>
 
     <div class="sidebar">
