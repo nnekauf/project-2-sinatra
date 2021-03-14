@@ -18,8 +18,31 @@
     font-family: Sans-Serif;
     line-height: 18px;
   }
+  
+  a:link{
 
- 
+    color: rgb(131, 131, 131);
+    
+    text-decoration: none;
+    
+    }
+
+  a:hover {
+    color: black;
+    text-decoration: underline;
+    
+  }
+
+  .nav {
+    background: rgb(255, 255, 255);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    }
+  .nav-link {
+    color: rgb(0, 0, 0);
+     
+}
 
   .wrapper {
     background: #fff;
