@@ -2,10 +2,15 @@
 
 <body>
 
+<% if current_user.id != @member.id%>
+<h1>Welcome to <strong><%= @member.username%>'s </strong>Closet!</h1>
 
+    <h3> Click on one of <strong><%=@member.username%>'s </strong>outfits to see the full look: </h3>
+<%else%>
 <h1>Welcome <%= current_user.username%>!</h1>
+    <h3>Your Closet: </h3>
+<%end%>
 
-<h3>Your Closet: </h3>
 
 <ul>
 <% @outfits.each do |o| %>

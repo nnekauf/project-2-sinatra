@@ -3,6 +3,8 @@
 <%=@outfit.bottom%><br><br>
 <%=@outfit.shoes%> <br><br>
 <%=@outfit.accessories%></p>
+<br>
+<small> This outfit belongs to: <a href="/users/<%=@outfit_owner.id%>"><%=@outfit_owner.username%></a> </small>
 
 <% if check_owner(@outfit) %>
   <a href="/outfits/<%=@outfit.id%>/edit">Edit this Outfit</a><br><br>
