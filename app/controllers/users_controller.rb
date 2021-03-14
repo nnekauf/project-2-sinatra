@@ -45,7 +45,10 @@ class UsersController < ApplicationController
 
     get '/users/:id' do
         redirect_if_not_logged_in
-         @outfits = current_user.outfits
+         #@outfits = current_user.outfits
+         @outfits = User.find_by(id: params[:id]).outfits
+         @member = User.find_by(id: params[:id])
+      
          erb :'/users/show'
     end
 
