@@ -8,7 +8,11 @@
     <h3> Click on one of <strong><%=@member.username%>'s </strong>outfits to see the full look: </h3>
 <%else%>
 <h1>Welcome <%= current_user.username%>!</h1>
-    <h3>Your Closet: </h3>
+    <%if @outfits.empty?%>
+        <h3>Your Closet is currently empty!</h3>
+    <%else%>
+        <h3>Your Closet: </h3>
+    <%end%>
 <%end%>
 
 
