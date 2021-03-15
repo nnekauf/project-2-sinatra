@@ -48,7 +48,7 @@ class UsersController < ApplicationController
          #@outfits = current_user.outfits
          @outfits = User.find_by(id: params[:id]).outfits
          @member = User.find_by(id: params[:id])
-      
+    
          erb :'/users/show'
     end
 
